@@ -1,4 +1,4 @@
-package com.example.iterator_lab;
+package com.example.task4;
 
 import javafx.scene.image.Image;
 
@@ -18,7 +18,7 @@ public class ConcreteAggregate implements
     }
     private class ImageIterator implements
             Iterator {
-        private int current = 1;
+        public int current = 1;
         private Image getImage(int iterator){
             String filename =
                     Paths.get("Task4/src/main/resources/Images/"+ filetopic
@@ -29,9 +29,11 @@ public class ConcreteAggregate implements
         @Override
         public boolean hasNext(int i) {
             //System.out.println(getImage(current+1).isError());
-            return
+
+         return
                     !getImage(current+i).isError();
         }
+        @Override
         public boolean hasPrev(int i) {
             //System.out.println(getImage(current+1).isError());
             return
@@ -45,6 +47,12 @@ public class ConcreteAggregate implements
             current = 1;
             return getImage(1);
         }
+        @Override
+public Object getFirst()
+{
+    return getImage(1);
+
+}
 
         @Override
         public Object preview() {

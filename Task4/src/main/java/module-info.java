@@ -3,6 +3,6 @@ module com.example.iterator_lab {
     requires javafx.fxml;
 
 
-    opens com.example.iterator_lab to javafx.fxml;
-    exports com.example.iterator_lab;
+    opens com.example.task4 to javafx.fxml;
+    exports com.example.task4;
 }
